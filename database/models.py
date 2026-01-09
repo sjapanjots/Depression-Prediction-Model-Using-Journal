@@ -1,27 +1,21 @@
-from sqlalchemy import Column, Integer, String, Text, Float, DateTime, ForeignKey
-from sqlalchemy.ext.declarative import declarative_base
-from datetime import datetime
+# Simple data class for Journal entries
 
-Base = declarative_base()
+class Journal:
+    def __init__(self, id, user_id, date, title, content, depression_score, risk_level, created_at, updated_at=None):
+        self.id = id
+        self.user_id = user_id
+        self.date = date
+        self.title = title
+        self.content = content
+        self.depression_score = depression_score
+        self.risk_level = risk_level
+        self.created_at = created_at
+        self.updated_at = updated_at or created_at
 
-class User(Base):
-    __tablename__ = 'users'
-    
-    id = Column(Integer, primary_key=True)
-    username = Column(String(50), unique=True, nullable=False)
-    email = Column(String(100), unique=True, nullable=False)
-    password_hash = Column(String(255), nullable=False)
-    created_at = Column(DateTime, default=datetime.utcnow)
-
-class Journal(Base):
-    __tablename__ = 'journals'
-    
-    id = Column(Integer, primary_key=True)
-    user_id = Column(Integer, ForeignKey('users.id'), nullable=False)
-    date = Column(DateTime, nullable=False)
-    title = Column(String(200))
-    content = Column(Text, nullable=False)
-    depression_score = Column(Float)  # 0-1
-    risk_level = Column(String(20))   # Low, Moderate, High
-    created_at = Column(DateTime, default=datetime.utcnow)
-    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+class User:
+    def __init__(self, id, username, email, password_hash, created_at):
+        self.id = id
+        self.username = username
+        self.email = email
+        self.password_hash = password_hash
+        self.created_at = created_at

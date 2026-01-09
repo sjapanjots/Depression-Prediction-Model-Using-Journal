@@ -1,5 +1,6 @@
 from transformers import pipeline
 import torch
+import streamlit as st
 
 # Load model once
 @st.cache_resource
