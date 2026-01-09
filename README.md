@@ -74,13 +74,15 @@ This project is designed to demonstrate:
 - End-to-end system design
 
 Detailed documentation and results will be added once the project reaches a stable release.
-
 ---
 
 ## 🛑 Final Notice
 This repository is public **for transparency and progress tracking only**.
 
+
 **Do not clone before contacting the author.**
 Unauthorized usage defeats the purpose of responsible open collaboration.
 
 Thank you for respecting this work.
+
+helklo vskjsvsk v.
